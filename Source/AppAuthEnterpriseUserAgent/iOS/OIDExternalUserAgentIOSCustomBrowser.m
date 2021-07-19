@@ -131,7 +131,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)presentExternalUserAgentRequest:(nonnull id<OIDExternalUserAgentRequest>)request
-                                session:(nonnull id<OIDExternalUserAgentSession>)session {
+                                session:(nonnull id<OIDExternalUserAgentSession>)session NS_EXTENSION_UNAVAILABLE_IOS("Extensions are not supported by this library. Use AppAuthCore instead."); {
   // If the app store URL is set, checks if the app is installed and if not opens the app store.
   if (_appStoreURL && _canOpenURLScheme) {
     // Verifies existence of LSApplicationQueriesSchemes Info.plist key.

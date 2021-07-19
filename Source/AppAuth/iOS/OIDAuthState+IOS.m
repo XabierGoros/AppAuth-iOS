@@ -29,7 +29,7 @@
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
                      presentingViewController:(UIViewController *)presentingViewController
-                                     callback:(OIDAuthStateAuthorizationCallback)callback {
+callback:(OIDAuthStateAuthorizationCallback)callback NS_EXTENSION_UNAVAILABLE_IOS("Extensions are not supported by this library. Use AppAuthCore instead."); {
   id<OIDExternalUserAgent> externalUserAgent;
 #if TARGET_OS_MACCATALYST
   externalUserAgent = [[OIDExternalUserAgentCatalyst alloc]
@@ -45,7 +45,7 @@
 #if !TARGET_OS_MACCATALYST
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
-                                  callback:(OIDAuthStateAuthorizationCallback)callback {
+callback:(OIDAuthStateAuthorizationCallback)callback NS_EXTENSION_UNAVAILABLE_IOS("Extensions are not supported by this library. Use AppAuthCore instead."); {
   OIDExternalUserAgentIOS *externalUserAgent = [[OIDExternalUserAgentIOS alloc] init];
   return [self authStateByPresentingAuthorizationRequest:authorizationRequest
                                        externalUserAgent:externalUserAgent
